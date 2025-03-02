@@ -1,0 +1,21 @@
+# Ignorar node_modules (carpeta con dependencias)
+node_modules/
+
+# Ignorar el archivo .env (variables de entorno)
+.env
+
+# Ignorar archivos de configuración local
+*.local
+
+# Ignorar archivos de registro
+*.log
+
+# Ignorar archivos de entorno de desarrollo
+.env.development
+
+# Ignorar archivos de entorno de producción
+.env.production
+
+# Ignorar carpetas de distribución
+dist/
+build/

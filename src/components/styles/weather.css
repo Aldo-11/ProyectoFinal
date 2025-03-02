@@ -1,0 +1,63 @@
+.weather-container {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    text-align: center;
+    color: white;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    margin-top: 30px;
+    width: 100%;
+    max-width: 300px;
+    align-self: center;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 101;
+}
+
+@media (min-width: 992px) {
+    .weather-container {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        min-width: 180px;
+        max-width: 250px;
+        z-index: 10;
+        margin-top: 0;
+    }
+}
+
+.weather-container h3 {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.weather-container button {
+    background: linear-gradient(135deg, #605e8c, #454368);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+}
+
+.weather-container button:hover {
+    background: #454368;
+    transform: scale(1.05);
+}
+
+.weather-info {
+    margin-top: 15px;
+    font-size: 14px;
+    text-align: left;
+}
+
+.weather-container .error-message {
+    color: #ff6b6b;
+    font-size: 13px;
+    margin: 10px 0;
+}

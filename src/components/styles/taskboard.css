@@ -1,0 +1,349 @@
+/* Estilos generales */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, rgba(6, 6, 12, 0.9), rgba(23, 25, 39, 0.9)), 
+                url('https://source.unsplash.com/1600x900/?technology') no-repeat center center/cover;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Contenedor principal */
+.task-container {
+    width: 100%;
+    max-width: 1400px;
+    min-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    max-height: 90vh; /* Ajuste del alto máximo */
+    overflow-y: auto; /* Agrega scroll si hay muchas tareas */
+}
+
+/* Título */
+h2 {
+    font-size: 28px;
+    margin-bottom: 25px;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+.task-container h2 {
+    margin-left: -320px; /* Ajusta el valor según lo necesites */
+}
+/* Input y botón*/
+.task-input-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px; /* Separación con las columnas */
+    width: 70%; 
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    overflow: hidden;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    margin-left: 130px;
+}
+
+.task-input-container input {
+    flex: 1;
+    padding: 16px 20px;
+    border: none;
+    background-color: rgba(255, 265, 255, 0.15);
+    color: white;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+    border-radius: 12px 0 0 12px;
+}
+
+.task-input-container input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 300;
+}
+
+.task-input-container input:focus {
+    background-color: rgba(255, 255, 255, 0.25);
+    box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+.task-input-container button {
+    padding: 16px 25px;
+    background: linear-gradient(135deg, #7e7bb9, #454368);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    border-radius: 0 12px 12px 0;
+    min-width: 100px;
+    letter-spacing: 0.5px;
+}
+
+.task-input-container button:hover {
+    background: linear-gradient(135deg, #9491d4, #605e8c);
+    transform: translateY(-2px);
+}
+
+.task-input-container button:active {
+    transform: translateY(1px);
+}
+
+/* Columnas de tareas */
+.task-columns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
+    gap: 30px;
+}
+
+.task-column {
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+}
+
+.task-column:hover {
+    transform: translateY(-5px);
+}
+
+.task-column h3 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.task-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    min-height: 200px;
+    flex: 1;
+    overflow-y: auto;
+}
+
+/* Item de tarea con botones */
+.task-item {
+    background: rgba(69, 67, 104, 0.7);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    font-size: 15px;
+    cursor: grab;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    border-left: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+.task-item:hover {
+    background: rgba(96, 94, 140, 0.8);
+    transform: translateY(-2px);
+}
+
+.task-item:active {
+    cursor: grabbing;
+}
+
+.task-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.task-title {
+    flex: 1;
+    text-align: left;
+    word-break: break-word;
+}
+
+.task-actions {
+    display: flex;
+    gap: 5px;
+    margin-left: 10px;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+}
+
+.task-item:hover .task-actions {
+    opacity: 1;
+}
+
+.task-action-button {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 16px;
+    color: white;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.edit-button:hover {
+    background-color: #4a90e2;
+    transform: scale(1.1);
+}
+
+.delete-button:hover {
+    background-color: #e74c3c;
+    transform: scale(1.1);
+}
+
+.save-button:hover {
+    background-color: #2ecc71;
+    transform: scale(1.1);
+}
+
+.cancel-button:hover {
+    background-color: #95a5a6;
+    transform: scale(1.1);
+}
+
+/* Estilo del modo de edición */
+.task-edit-container {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+}
+
+.task-edit-input {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 6px;
+    padding: 6px 10px;
+    color: white;
+    font-size: 15px;
+    outline: none;
+}
+
+.task-edit-buttons {
+    display: flex;
+    gap: 5px;
+}
+
+/* Componente del clima */
+.weather-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    text-align: center;
+    color: white;
+    min-width: 180px;
+    max-width: 250px;
+    z-index: 10;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.weather-container h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.weather-container button {
+    background: linear-gradient(135deg, #7e7bb9, #454368);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.weather-container button:hover {
+    background: linear-gradient(135deg, #9491d4, #605e8c);
+    transform: scale(1.05);
+}
+
+.weather-info {
+    margin-top: 15px;
+    font-size: 14px;
+    text-align: left;
+    line-height: 1.5;
+}
+
+.error-message {
+    color: #ff6b6b;
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+/* Responsividad */
+@media (max-width: 992px) {
+    .task-container {
+        width: 95%;
+        padding: 20px;
+        margin: 10px auto;
+    }
+    
+    .task-columns {
+        overflow-x: auto;
+        padding-bottom: 15px;
+    }
+    
+    .weather-container {
+        position: static;
+        margin: 20px auto;
+        width: 90%;
+        max-width: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .task-input-container {
+        width: 90%;
+        flex-direction: column;
+    }
+    
+    .task-input-container input {
+        border-radius: 12px;
+        margin-bottom: 10px;
+    }
+    
+    .task-input-container button {
+        border-radius: 12px;
+        width: 100%;
+    }
+    
+    .task-column {
+        min-width: 220px;
+    }
+    
+    .task-actions {
+        opacity: 1;
+    }
+}
+

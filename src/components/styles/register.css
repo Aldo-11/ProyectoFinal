@@ -1,0 +1,157 @@
+/* Estilos generales */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, rgba(6, 6, 12, 0.9), rgba(23, 25, 39, 0.9)), 
+                url('https://source.unsplash.com/1600x900/?technology') no-repeat center center/cover;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Contenedor del formulario */
+.register-container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+    width: 400px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+
+/* Título */
+h2 {
+    color: #ffffff;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Grupo de inputs */
+.input-group {
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    font-weight: bold;
+    color: #ffffff;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    outline: none;
+}
+
+.input-group input::placeholder {
+    color: #d3d3d3;
+}
+
+.input-group input:focus {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Botón de registro */
+button.register-btn {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(90deg, #605e8c, #454368);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    margin-top: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+button.register-btn:hover {
+    background: linear-gradient(90deg, #454368, #605e8c);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Enlace de inicio de sesión */
+p {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #d3d3d3;
+}
+
+p a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+p a:hover {
+    color: #9491d4;
+}
+
+/* Mensaje de error */
+.error-message {
+    color: #ff6b6b;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .register-container {
+        width: 90%;
+    }
+}
+
+/* Mensaje de éxito */
+.success-message {
+    color: #2ecc71; /* Verde éxito */
+    font-size: 14px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Mensaje de error */
+.error-message {
+    color: #ff6b6b;
+    font-size: 14px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Estilos para el contenedor de contraseña y el botón mostrar/ocultar */
+.password-container {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 37px; /* Usamos el valor que indicaste que funcionaba bien */
+    background: none;
+    border: none;
+    color: #d3d3d3;
+    cursor: pointer;
+    font-size: 12px;
+    padding: 5px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: bold;
+}
+
+.toggle-password:hover {
+    color: white;
+}

@@ -1,0 +1,275 @@
+/* Estilos generales */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, rgba(6, 6, 12, 0.9), rgba(23, 25, 39, 0.9)), 
+                url('https://source.unsplash.com/1600x900/?technology') no-repeat center center/cover;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Contenedor principal */
+.task-container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+    width: 90%; /* Ajustado para centrar correctamente */
+    max-width: 1200px;
+    min-height: 80vh;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    color: white;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: sticky;
+    height: 90vh; /* Asegura que no crezca indefinidamente */
+    max-width: 1200px;
+    overflow: hidden;
+}
+
+/* Título */
+h2 {
+    font-size: 28px;
+    margin-bottom: 25px;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Input y botón */
+.task-input-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px; /*Separación con las columnas */
+    width: 70%; 
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    overflow: hidden;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.2); 
+    padding: 15px;
+}
+
+.task-input-container input {
+    flex: 1;
+    padding: 16px 20px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.15);
+    color: white;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+    border-radius: 12px 0 0 12px;
+}
+
+.task-input-container input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 300;
+}
+
+.task-input-container input:focus {
+    background-color: rgba(255, 255, 255, 0.25);
+    box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+.task-input-container button {
+    padding: 16px 25px;
+    background: linear-gradient(135deg, #7e7bb9, #454368);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    border-radius: 0 12px 12px 0;
+    min-width: 100px;
+    letter-spacing: 0.5px;
+}
+
+.task-input-container button:hover {
+    background: linear-gradient(135deg, #9491d4, #605e8c);
+    transform: translateY(-2px);
+}
+
+.task-input-container button:active {
+    transform: translateY(1px);
+}
+
+/* Columnas de tareas */
+.task-columns {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 25px; /* Espacio entre columnas */
+    flex: 1;
+    overflow-x: auto;
+    padding-bottom: 20px;
+    margin-top: 65px; /* Espacio adicional desde el input */
+}
+
+.task-column {
+    flex: 1;
+    min-width: 250px;
+    max-width: 350px;
+    padding: 25px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.15);
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.task-column:hover {
+    transform: translateY(-5px);
+}
+
+.task-column h3 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.task-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    min-height: 200px;
+    flex: 1;
+    overflow-y: auto;
+}
+
+.task-list li {
+    background: rgba(69, 67, 104, 0.7);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    text-align: left;
+    font-size: 15px;
+    cursor: grab;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    border-left: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+.task-list li:hover {
+    background: rgba(96, 94, 140, 0.8);
+    transform: translateY(-2px);
+}
+
+.task-list li:active {
+    cursor: grabbing;
+}
+
+/* Componente del clima */
+.weather-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    text-align: center;
+    color: white;
+    min-width: 180px;
+    max-width: 250px;
+    z-index: 10;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.weather-container h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.weather-container button {
+    background: linear-gradient(135deg, #7e7bb9, #454368);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.weather-container button:hover {
+    background: linear-gradient(135deg, #9491d4, #605e8c);
+    transform: scale(1.05);
+}
+
+.weather-info {
+    margin-top: 15px;
+    font-size: 14px;
+    text-align: left;
+    line-height: 1.5;
+}
+
+.error-message {
+    color: #ff6b6b;
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+/* Responsividad */
+@media (max-width: 992px) {
+    .task-container {
+        width: 95%;
+        padding: 20px;
+        margin: 10px auto;
+    }
+    
+    .task-columns {
+        overflow-x: auto;
+        padding-bottom: 15px;
+    }
+    
+    .weather-container {
+        position: static;
+        margin: 20px auto;
+        width: 90%;
+        max-width: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .task-input-container {
+        width: 90%;
+        flex-direction: column;
+    }
+    
+    .task-input-container input {
+        border-radius: 12px;
+        margin-bottom: 10px;
+    }
+    
+    .task-input-container button {
+        border-radius: 12px;
+        width: 100%;
+    }
+    
+    .task-column {
+        min-width: 220px;
+    }
+}
